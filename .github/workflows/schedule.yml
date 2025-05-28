@@ -26,6 +26,6 @@ jobs:
         run: pip install requests
 
       - name: Run script
-        run: python bike_point_extract.py
+        run: python all_bike_points.py
     
   
