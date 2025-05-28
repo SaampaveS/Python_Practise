@@ -2,7 +2,7 @@ name: run python script on schedule
 on:
   schedule: 
     - cron: '51 13 * * *'
-      workflow_dispatch:
+  workflow_dispatch:
 
 jobs:
   extract-bike-points:
