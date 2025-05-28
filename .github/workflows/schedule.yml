@@ -7,7 +7,7 @@ on:
 jobs:
   extract-bike-points:
     runs-on: ubuntu-latest
-    environment: .env
+    environment: Bike Point Environments
 
     
     steps:
