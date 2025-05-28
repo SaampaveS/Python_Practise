@@ -2,7 +2,7 @@ name: bike_point_extract_schedule
 
 on:
   schedule: 
-    - cron: '39 12 * * *'
+    - cron: '41 12 * * *'
 
 jobs:
   extract-bike-points:
