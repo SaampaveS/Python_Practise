@@ -16,10 +16,19 @@ if response.status_code== 200:
         endpoint_data = endpoint_response.json()
 
         #get modified timestamp to help us build our file. The [0] outputs tehe first modified number
-        first_value = endpoint_data['additionalProperties'][0]
-        modified = first_value.get('modified')
-        modified = modified.replace(':','-')
-        modified = modified.replace('.','-')
+        if 'additionalProperties' in endpoint_data:
+            first_value = endpoint_data['additionalProperties'][0]
+            # Continue processing first_value
+
+    # Handle the missing key case appropriately
+
+            first_value = endpoint_data['additionalProperties'][0]
+            modified = first_value.get('modified')
+            modified = modified.replace(':','-')
+            modified = modified.replace('.','-')
+
+        else:
+            print("Key 'additionalProperties' not found in endpoint_data")
         #print(modified)
 
         file_list = [f for f in os.listdir('.') if f.endswith('.json')]
