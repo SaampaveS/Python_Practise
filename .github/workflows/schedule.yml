@@ -7,11 +7,8 @@ on:
 jobs:
   extract-bike-points:
     runs-on: ubuntu-latest
+    environment: .env
 
-    env:
-      AWS_ACCESS_KEY: ${{secrets.AWS_ACCESS_KEY}}
-      AWS_SECRET_ACCESS_KEY: ${{secrets.AWS_SECRET_ACCESS_KEY}}
-      AWS_BUCKET_NAME: ${{secrets.AWS_BUCKET_NAME}}
     
     steps:
       - name: Checkout repository
@@ -26,6 +23,10 @@ jobs:
         run: pip install requests
 
       - name: Run script
-        run: python bike_point_extract.py
+        run: python all_bike_points.py
     
+        env:
+          AWS_ACCESS_KEY: ${{secrets.AWS_ACCESS_KEY}}
+          AWS_SECRET_ACCESS_KEY: ${{secrets.AWS_SECRET_ACCESS_KEY}}
+          AWS_BUCKET_NAME: ${{secrets.AWS_BUCKET_NAME}}
   
