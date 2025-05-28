@@ -1,8 +1,8 @@
-name: bike_point_extract_schedule
+name: bike_point_extract.py
 
 on:
   schedule: 
-    - cron: '41 12 * * *'
+    - cron: '51 12 * * *'
 
 jobs:
   extract-bike-points:
